@@ -1,0 +1,90 @@
+/* Home.css */
+
+.home {
+position: relative;
+  width: 390px;   /* 아이폰 가로 크기 */
+  height: 844px;  /* 아이폰 세로 크기 */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  background-color: #fff;
+  margin: 0 auto; 
+  flex-direction: column; 
+  display:flex;
+}
+
+/* 상단 헤더 */
+.top-banner {
+  display: flex;
+  justify-content: space-between; /* 좌측: 로고, 우측: 아이콘 */
+  align-items: center;
+  padding: 10px 20px;
+  height: 80px;
+  
+}
+
+/* 로고 */
+.logo img {
+  height: 20px; /* 크기 맞추기 */
+}
+
+/* 아이콘 영역 */
+.top-icons {
+  display: flex;
+  gap: 15px; /* 아이콘 사이 간격 */
+}
+
+.top-icons img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* 슬라이드 배너 */
+.banner-container {
+  margin-top: 20px;   /* 위쪽 간격 */
+  margin-bottom: 5px; /* 아래쪽 간격 */
+}
+.banner img{
+  width: 100%;          /* 가로 꽉 차게 */
+  height: auto;         /* 비율 유지 */     /* 여백 제거 */
+  object-fit: cover;
+}
+
+/* 중앙 아이콘 영역 */
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;           /* 아이콘 사이 간격 */
+  margin-bottom: 10px; /* 아래쪽 간격 */
+}
+
+/* 하단 탭바 */
+.bottom-tab {
+  position: absolute;   /* .home 내부 기준으로 배치 */
+  bottom: 0;            /* .home의 가장 밑에 고정 */
+  left: 0;
+  width: 100%;          /* .home의 가로 크기(390px)에 맞게 */
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 12px 0;      /* 위아래 여백 */
+  border-top: 1px solid #ddd;
+}
+
+
+.monthly-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.monthly-banners {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.monthly-banners img {
+  width: 45%;      /* 2개 배너 나란히 */
+  border-radius: 8px;
+  object-fit: cover;
+}
