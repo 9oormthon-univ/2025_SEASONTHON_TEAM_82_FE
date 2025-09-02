@@ -1,0 +1,70 @@
+:root {
+  /* 컨테이너 & 패딩 */
+  --container-max: 640px; /* 모바일 기준 최대 폭 */
+  --page-padding-x: 16px; /* 좌우 패딩 */
+  --page-padding-y: 16px; /* 상하 패딩 */
+
+  /* 8pt spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* 타이포 (모바일 기준) */
+  --font-size-body: 16px;
+  --font-size-h1: clamp(22px, 5vw, 28px);
+  --font-size-h2: clamp(18px, 4.5vw, 22px);
+  --line-height: 1.5;
+
+  /* 안전영역 */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* 바텀 내비 등 고정 UI 높이 */
+  --bottom-nav-height: 56px;
+}
+
+/* 공통 컨테이너(모든 페이지가 이 규격을 따르게) */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--page-padding-y) var(--page-padding-x);
+  box-sizing: border-box;
+}
+
+/* 페이지 기본 타이포 */
+body {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height);
+}
+
+/* 안전영역 */
+.safe-top    { padding-top:    var(--safe-top); }
+.safe-bottom { padding-bottom: var(--safe-bottom); }
+
+/* “한 화면 페이지” 레이아웃 도우미 */
+.fullscreen {
+  min-height: 100dvh;
+  display: flex; 
+  flex-direction: column;
+}
+
+/* 고정 하단 네비가 있을 때 콘텐츠 영역 계산 */
+.with-bottom-nav {
+  padding-bottom: calc(var(--bottom-nav-height) + var(--safe-bottom));
+}
+
+/* 제목 규격 */
+.h1 { font-size: var(--font-size-h1); font-weight: 700; }
+.h2 { font-size: var(--font-size-h2); font-weight: 600; }
+
+/* 그리드(필요 시) */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 모바일에서도 2열이 필요한 경우 */
+  gap: var(--space-4);
+}
