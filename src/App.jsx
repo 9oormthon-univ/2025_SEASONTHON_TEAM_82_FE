@@ -6,7 +6,9 @@ import Portfolio from "./pages/Home";
 import Network from "./pages/Home";
 import My from "./pages/Home";
 import {Routes,Route} from "react-router-dom";
-import Onboarding from './pages/Onboarding';
+// import Onboarding from './pages/Onboarding';
+import Onboarding from './pages/onboarding/Onboarding';
+
 function App() {
   return (
   <Routes>

@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  src: url("../assets/fonts/Pretendard-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* 카드 전체 */
+.foundation-info {
+  display: grid;
+  grid-template-columns: clamp(100px, 1%, 200px) 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border-radius: 28px;
+  text-decoration: none;
+  color: inherit;
+
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.foundation-info:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.16);
+}
+
+/* 왼쪽 일러스트 영역 */
+.foundation-info__left {
+  background: #f5f7ff;
+  border-radius: 28px 0 0 28px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.foundation-info__left img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* 오른쪽 텍스트 영역 */
+.foundation-info__right {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  min-width: 0; /* 긴 제목 줄바꿈 보호 */
+}
+
+.foundation-info__title {
+  margin: 0;
+  font-family: "Pretendard-SemiBold";
+  font-size: 16px;
+  line-height: 1.25;
+  color: #0f0f0f;
+  word-break: keep-all;
+}
+
+.foundation-info__subtitle {
+  margin: 0;
+  font-family: "Pretendard-Regular";
+  font-size: 13px;
+  line-height: 1.35;
+  color: #b9b6b6; /* 예시 디자인의 연한 회색 느낌 */
+  word-break: keep-all;
+}
+
+/* PhoneFrame 내부에서 넘치지 않도록 안전장치 */
+.PhoneFrame .foundation-info {
+  max-width: 100%;
+}

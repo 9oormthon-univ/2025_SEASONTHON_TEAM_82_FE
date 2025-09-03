@@ -17,6 +17,7 @@ body {
   --safe-b: env(safe-area-inset-bottom, 0px);
 }
 
+
 .LoginScene {
   position: relative;
   width: 100%;
@@ -26,19 +27,20 @@ body {
 }
 
 .LoginScene .content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  height: 100%;
   display: grid;
   grid-template-rows: 1fr auto;
   align-items: center;
+  box-sizing: border-box;
   padding: 24px 20px calc(20px + var(--safe-b));
 }
 
-/* ---------------- Hero ---------------- */
+
 .hero {
   display: grid;
-  justify-items: center;
+  place-items: center;
   gap: 8px;
   transform: translateY(0);
   transition: transform 600ms ease;
@@ -63,7 +65,7 @@ body {
   transition: color 800ms ease;
 }
 
-/* ---------------- CTA (SVG 이미지 버튼) ---------------- */
+
 .cta-imgbtn {
   justify-self: center;
   width: clamp(240px, 80%, 360px);

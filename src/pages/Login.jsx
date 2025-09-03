@@ -27,13 +27,16 @@ const Login = () => {
 
   const handleKakaoLogin = () => { 
     // 실제 카카오 로그인 API 연동 가능 
-     navigate("/Home"); 
+
+    
+    navigate("/onboarding");
+    //  navigate("/Home"); 
   };
 
   return ( 
     <div className="PhoneCanvas">
       <div 
-        className={`LoginScene ${phase}`} 
+        className={`PhoneFrame LoginScene ${phase}`} 
         style={{
           "--bridge-on-blue": COLORS.bridgeOnBlue,
           "--bridge-on-white": COLORS.bridgeOnWhite,
@@ -51,7 +54,7 @@ const Login = () => {
           <button className="cta-imgbtn" onClick={handleKakaoLogin} aria-label={STRINGS?.Login?.cta ?? "카카오로 시작하기"}>
             <img src={kakaoLoginBtn} alt="" />
           </button>
-        </div> 
+        </div>
       </div> 
     </div>
   ); 
