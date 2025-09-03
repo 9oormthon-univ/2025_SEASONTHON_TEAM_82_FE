@@ -41,22 +41,48 @@ position: relative;
 
 /* 슬라이드 배너 */
 .banner-container {
-  margin-top: 20px;   /* 위쪽 간격 */
-  margin-bottom: 5px; /* 아래쪽 간격 */
+  width: 90%;          /* 화면 가로 90%만 사용 → 좌우 여백 생김 */
+  max-width: 350px;    /* 너무 커지지 않도록 제한 */
+  height: 180px;       /* 세로 크기 줄임 */
+  margin: 0px auto;   /* 위아래 20px 여백, 중앙 정렬 */
+  border-radius: 16px; /* 모서리 둥글게 */
+  overflow: hidden;    /* 둥근 모서리 안 벗어나게 */
 }
 .banner img{
-  width: 100%;          /* 가로 꽉 차게 */
-  height: auto;         /* 비율 유지 */     /* 여백 제거 */
-  object-fit: cover;
+  width: 100%;
+  height: 180px; /* 배너 높이와 동일하게 */
+  object-fit: cover; /* 이미지 비율 유지하며 꽉 채우기 */
+  border-radius: 16px;
 }
 
 /* 중앙 아이콘 영역 */
 .categories {
   display: flex;
-  justify-content: center;
-  gap: 20px;           /* 아이콘 사이 간격 */
-  margin-bottom: 10px; /* 아래쪽 간격 */
+  justify-content: flex-start;  /* 왼쪽부터 나열 */
+  gap: 20px;
+  margin-bottom: 10px;
+  width: max-content;           /* 아이콘 개수만큼 가로 길이 늘림 */
 }
+
+.categories-scroll {
+  overflow-x: auto;   
+  -webkit-overflow-scrolling: touch; 
+  padding: 10px;  /* 좌우 여백 */
+}
+
+.category-title {
+  width: 172px;     /* 글자 박스 가로 크기 */
+  height: 19px;     /* 글자 박스 세로 크기 */
+  font-size: 16px;  /* 글자 크기 (19px 높이에 맞게) */
+  font-weight: 700; /* 굵은 글씨 */
+  line-height: 19px;/* 세로 중앙 정렬 */
+  margin: 30px 0 15px 15px; /* 화면 여백 */
+  white-space: nowrap;  
+  text-align: left; /* 왼쪽 정렬 */
+  font-family: 'Noto Sans KR', sans-serif; /* 깔끔한 고딕체 */
+
+}
+
 
 /* 하단 탭바 */
 .bottom-tab {
