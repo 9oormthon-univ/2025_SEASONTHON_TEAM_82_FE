@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Jalnan2TTF";
+  src: url("../assets/fonts/Jalnan2TTF.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Jalnan2TTF", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+
+:root {
+  --phone-w: 390px;
+  --bridge-on-blue: #4650FF;
+  --text-dark: #111827;
+  --text-gray: #6B7280;
+  --canvas-bg: #FFFFFF;
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.12);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+.OnboardingScene {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: var(--canvas-bg);
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 24px 20px calc(20px + var(--safe-b));
+  min-height: 0;
+}
+
+
+/* ========== 상단 고정 헤더 ========== */
+.onboarding-header {
+  grid-row: 1;
+  text-align: center;
+  color: var(--bridge-on-blue);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+  margin: 24px 0 0 0;
+}
+
+
+/* ========== 슬라이드 콘텐츠 ========== */
+.onboarding-viewport {
+  grid-row: 2;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  margin-bottom: 10vh;
+}
+
+.onboarding-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transition: transform 420ms ease;
+}
+
+/* 개별 슬라이드 */
+.onboarding-slide {
+  flex: 0 0 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: end;
+  justify-items: center;
+  padding: 16px 20px 0;
+  box-sizing: border-box;
+}
+
+/* 일러스트 영역 */
+.onboarding-illustration {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  /* height: min(38vh, 360px); */
+  min-height: 0;
+}
+.onboarding-illustration img {
+  max-width: 80%;
+  max-height: min(38vh, 360px);
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+
+/* 캡션 텍스트 */
+.onboarding-caption {
+  margin: 0 0 16px 0;
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 16px;
+  font-family: "Pretendard-Regular";
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+/* ========== 하단 버튼 ========== */
+.OnboardingScene > .onboarding-button {
+  grid-row: 3;
+  justify-self: center;
+  /* margin: 0 0 48px 0; */
+  margin-bottom: 24px;
+}
+
+/* 좁은 화면에서는 그림자/라운드 제거하고 풀스크린로 */
+@media (max-width: 480px) {
+  .OnboardingScene {
+    max-width: 100%;
+    min-height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

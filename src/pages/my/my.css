@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Jalnan2TTF";
+  src: url("../assets/fonts/Jalnan2TTF.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  src: url("../assets/fonts/Pretendard-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Jalnan2TTF", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* =================================================== */
+
+:root { --safe-b: env(safe-area-inset-bottom, 0px); }
+
+.PhoneCanvas {
+    overflow: hidden;
+}
+.MyScene {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+.PhoneFrame.MyScene {
+    overflow: hidden;
+}
+
+.my-content {
+    height: 100%;
+}
