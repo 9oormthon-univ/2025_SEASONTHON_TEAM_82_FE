@@ -7,6 +7,7 @@ import Network from "./pages/Home";
 import My from "./pages/my/my";
 import {Routes,Route} from "react-router-dom";
 import Onboarding from './pages/onboarding/Onboarding';
+import BusinessPlanDetail from './pages/portfolio/businessPlanDetail';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/network" element={<Network />} />
       <Route path="/my" element={<My />} />
+
+      <Route path="/portfolio/b/:businessPlanId" element={<BusinessPlanDetail type="b" />} />
   </Routes>
   );
 };

@@ -1,3 +1,6 @@
+import BusinessPlanDetail from "../pages/portfolio/businessPlanDetail";
+import Portfolio from "../pages/portfolio/portfolio";
+
 export const STRINGS = {
   BridgeOn: '브릿지ON',
   Login: {
@@ -15,5 +18,28 @@ export const STRINGS = {
   },
   home: {
     sectionMonthly: '이달의 창업정보',
+  },
+  Portfolio: {
+    title: "작업 공간",
+    subtitle: "당신의 아이디어를 기록하고 공유하세요!",
+    description: "포트폴리오와 사업 계획서는 언제든 수정 가능하며, 네트워크 공간에서 공유할 수 있습니다.",
+    upload: {
+      portfolio: "포트폴리오 등록",
+      businesspaln: "사업계획서 등록"
+    },
+    myPortfolio: {
+      title: "내 포트폴리오",
+      defaultDescription: "아직 등록한 포트폴리오가 없습니다. 아이디어를 기록해보세요."
+    },
+    myBusinessPlan: {
+      title: "내 사업계획서",
+      defaultDescription: "사업계획서를 업로드하고 창업의 첫 걸음을 시작해보세요."
+    }
+  },
+  BusinessPlanDetail: {
+    section1: "사업 개요",
+    section2: "시장/분석 경쟁",
+    section3: "비지니스 모델",
+    section4: "실행 계획"
   }
 };
