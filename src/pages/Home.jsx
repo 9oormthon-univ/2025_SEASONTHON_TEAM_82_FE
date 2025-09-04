@@ -35,6 +35,7 @@ import network from "../images/network.png";
 import banner1 from "../images/banner1.png";
 import banner2 from "../images/banner2.png";
 import banner3 from "../images/banner3.png";
+
 import FoundationInfo from "../components/button/home/FoundationInfo";
 import Nav from "../components/ui/nav/Nav";
 

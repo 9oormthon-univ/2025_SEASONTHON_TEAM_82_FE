@@ -1,0 +1,22 @@
+.Info {
+position: relative;
+  width: 390px;   /* 아이폰 가로 크기 */
+  height: 844px;  /* 아이폰 세로 크기 */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  background-color: #fff;
+  margin: 0 auto; 
+  flex-direction: column; 
+  display:flex;
+}
+
+/* 헤더 */
+.Info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
