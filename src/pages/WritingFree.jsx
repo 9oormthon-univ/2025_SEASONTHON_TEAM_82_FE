@@ -1,12 +1,12 @@
 //글쓰기 페이지
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Writing.css";
+import "./WritingFree.css";
 
 import fileicon from "../images/FileIcon.png";
 
 
-const Writing = () => {
+const WritingFree = () => {
 const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -60,23 +60,23 @@ const navigate = useNavigate();
           onChange={(e) => setContent(e.target.value)}
         />
       </div>
-{/*이미지 업로드*/}
-<div className="file-upload">
-  <label htmlFor="fileInput" className="file-label">
-    {image ? (
-      <img src={image} alt="업로드된 이미지" className="preview" />
-    ) : (
-      <img src={fileicon} alt="업로드 이미지" className="upload-button" />
-    )}
-  </label>
-  <input
-    id="fileInput"
-    type="file"
-    accept="image/*"
-    onChange={handleImageUpload}
-    hidden
-  />
-</div>
+ {/* 이미지 업로드 */}
+        <div className="file-upload">
+          <label htmlFor="fileInput" className="file-label">
+            {image ? (
+              <img src={image} alt="업로드된 이미지" className="preview" />
+            ) : (
+              <img src={fileicon} alt="업로드 이미지" className="upload-button" />
+            )}
+          </label>
+          <input
+            id="fileInput"
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            hidden
+          />
+        </div>
 
 
       {/* 등록 버튼 */}
@@ -88,4 +88,4 @@ const navigate = useNavigate();
     );
 };  
 
-export default Writing;
+export default WritingFree;

@@ -5,12 +5,15 @@ import Info from "./pages/Info";
 import Portfolio from "./pages/Portfolio";
 import Network from "./pages/Network";
 import My from "./pages/My";
-import Writing from "./pages/Writing";
+import WritingFree from "./pages/WritingFree";
+import WritingRecruit from "./pages/WritingRecruit";
+import Recruit from "./pages/Recruit";
 import {Routes,Route} from "react-router-dom";
 import Onboarding from './pages/Onboarding';
 function App() {
   return (
   <Routes>
+    <Route path="network/recruit" element = {<Recruit/>} />
      <Route path="/" element={<Login/>} />
      <Route path="/Home" element = {<Home/>} />
      <Route path="/onboarding" element={<Onboarding />} />
@@ -18,7 +21,8 @@ function App() {
         <Route path="/portfoliotab" element={<Portfolio />} />
         <Route path="/networktab" element={<Network />} />
         <Route path="/mytab" element={<My />} />
-        <Route path="/writing" element={<Writing />} />
+        <Route path="/writingfree" element={<WritingFree />} />
+        <Route path="/writingrecruit" element={<WritingRecruit />} />
   </Routes>
   );
 };
