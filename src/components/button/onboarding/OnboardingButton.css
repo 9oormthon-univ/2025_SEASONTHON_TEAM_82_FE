@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+.onboarding-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80%;
+  max-width: 320px;
+  height: 56px;
+  margin: 0 auto 24px auto;
+
+  background-color: #2255CA;
+  color: #ffffff;
+
+  font-family: "Pretendard-Regular";
+  font-size: 18px;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 28px;
+  padding: 14px 18px;
+  cursor: pointer;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.onboarding-button:hover { background-color: #2255CA; }
+.onboarding-button:active { transform: scale(0.97); }
+.onboarding-button:focus-visible {
+  outline: 2px solid #2255CA;
+  outline-offset: 4px;
+}

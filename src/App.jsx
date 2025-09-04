@@ -1,28 +1,31 @@
 import './App.css'
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Info from "./pages/Info";
-import Portfolio from "./pages/Portfolio";
+
 import Network from "./pages/Network";
-import My from "./pages/My";
 import WritingFree from "./pages/WritingFree";
 import WritingRecruit from "./pages/WritingRecruit";
 import Recruit from "./pages/Recruit";
+import Info from "./pages/info/info";
+import Portfolio from "./pages/portfolio/portfolio";
+import My from "./pages/my/my";
 import {Routes,Route} from "react-router-dom";
-import Onboarding from './pages/Onboarding';
+import Onboarding from './pages/onboarding/Onboarding';
+
 function App() {
   return (
   <Routes>
     <Route path="network/recruit" element = {<Recruit/>} />
-     <Route path="/" element={<Login/>} />
-     <Route path="/Home" element = {<Home/>} />
-     <Route path="/onboarding" element={<Onboarding />} />
-       <Route path="/infotab" element={<Info />} />
-        <Route path="/portfoliotab" element={<Portfolio />} />
-        <Route path="/networktab" element={<Network />} />
-        <Route path="/mytab" element={<My />} />
-        <Route path="/writingfree" element={<WritingFree />} />
-        <Route path="/writingrecruit" element={<WritingRecruit />} />
+    <Route path="/networktab" element={<Network />} />
+    <Route path="/writingfree" element={<WritingFree />} />
+    <Route path="/writingrecruit" element={<WritingRecruit />} />
+    <Route path="/" element={<Login/>} />
+    <Route path="/Home" element = {<Home/>} />
+    <Route path="/onboarding" element={<Onboarding />} />
+    <Route path="/info" element={<Info />} />
+    <Route path="/portfolio" element={<Portfolio />} />
+    <Route path="/network" element={<Network />} />
+    <Route path="/my" element={<My />} />
   </Routes>
   );
 };

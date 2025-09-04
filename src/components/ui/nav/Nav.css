@@ -1,0 +1,44 @@
+/* src/components/nav/Nav.css */
+:root {
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+.BottomNav{
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 8px 12px calc(8px + var(--safe-b));
+  box-shadow: 0 -2px 12px rgba(0,0,0,.06);
+}
+
+.nav-item{
+  display: grid;
+  place-items: center;
+  padding: 6px 0;
+  text-decoration: none;
+  outline: none;
+  border-radius: 10px;              /* 터치 히트 영역 */
+}
+
+.nav-item .icon{
+  width: 40px;                      /* 아이콘 사이즈만 수정하면 됨 */
+  height: 40px;
+  display: block;
+}
+
+.nav-item:focus-visible{
+  outline: 2px solid #e5e7eb;
+  outline-offset: 2px;
+}
+
+/* 필요 시 활성 상태에 추가 효과를 주고 싶으면 여기서 */
+.nav-item.is-active { /* e.g., transform: translateY(-1px); */ }
