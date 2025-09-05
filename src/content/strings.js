@@ -40,6 +40,7 @@ export const STRINGS = {
     section1: "사업 개요",
     section2: "시장/분석 경쟁",
     section3: "비지니스 모델",
-    section4: "실행 계획"
+    section4: "실행 계획",
+    section5: "다운로드"
   }
 };

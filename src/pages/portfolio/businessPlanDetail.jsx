@@ -75,12 +75,12 @@ const BusinessPlanDetail = () => {
                     </header>
 
                     <section>
-                        <SectionBox title={STRINGS.BusinessPlanDetail.section1} content={bp.overview}/>
-                        <SectionBox title={STRINGS.BusinessPlanDetail.section2} content={bp.marketingAnalysis}/>
-                        <SectionBox title={STRINGS.BusinessPlanDetail.section3} content={bp.businessModel}/>
-                        <SectionBox title={STRINGS.BusinessPlanDetail.section4} content={bp.actionPlan}/>
+                        <SectionBox title={STRINGS.BusinessPlanDetail.section1} type="text" content={bp.overview}/>
+                        <SectionBox title={STRINGS.BusinessPlanDetail.section2} type="text" content={bp.marketingAnalysis}/>
+                        <SectionBox title={STRINGS.BusinessPlanDetail.section3} type="text" content={bp.businessModel}/>
+                        <SectionBox title={STRINGS.BusinessPlanDetail.section4} type="text" content={bp.actionPlan}/>
+                        <SectionBox title={STRINGS.BusinessPlanDetail.section5} type="download" content={bp.title} fileUrl={bp.file} fileName={`${bp.title}.PDF`}/>
                     </section>
-
 
                 </div>
                 <Nav/>

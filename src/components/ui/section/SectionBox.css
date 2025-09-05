@@ -36,3 +36,36 @@
   .section-box__title   { font-size: 20px; }
   .section-box__content { font-size: 18px; }
 }
+
+
+.section-box.is-download .section-box__file {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1.35;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+
+/* 비어있는 경우 */
+.section-box__empty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #AAA5A5;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.section-box__empty-icon {
+  width: 18px;
+  height: 16px;
+  display: block;
+  opacity: 0.9;
+}
+
+.section-box__empty-text {
+  font-family: "Pretendard-Regular";
+}

@@ -52,6 +52,12 @@ body {
     -webkit-overflow-scrolling: touch;
     padding: 20px 16px calc(16px + var(--safe-b));
     box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 
@@ -59,7 +65,8 @@ body {
 .bp-header{ 
   display: grid; 
   gap: 8px; 
-  margin: 12px 0; 
+  margin: 24px 0;
+  
 }
 
 .bp-back{
