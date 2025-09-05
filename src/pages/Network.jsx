@@ -69,8 +69,8 @@ const navigate = useNavigate();
       {/* 하단 탭바 */}
             <div className="bottom-tab">
               <Link to="/Home"><img src={homeg} alt="홈"/></Link>
-              <Link to="/infotab"><img src={info} alt="정보"/></Link>
-              <Link to="/portfoliotab"><img src={portfolio} alt="포트폴리오"/></Link>
+              <Link to="/info"><img src={info} alt="정보"/></Link>
+              <Link to="/portfolio"><img src={portfolio} alt="포트폴리오"/></Link>
               <Link to="/networktab"><img src={networkh} alt="네트워크"/></Link>
               <Link to="/mytab"><img src={my} alt="마이"/></Link>
             </div>
