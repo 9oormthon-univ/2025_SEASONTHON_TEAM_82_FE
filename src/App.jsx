@@ -8,6 +8,7 @@ import My from "./pages/my/my";
 import {Routes,Route} from "react-router-dom";
 import Onboarding from './pages/onboarding/Onboarding';
 import BusinessPlanDetail from './pages/portfolio/businessPlanDetail';
+import PortfolioDetail from './pages/portfolio/portfolioDetail';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/my" element={<My />} />
 
       <Route path="/portfolio/b/:businessPlanId" element={<BusinessPlanDetail type="b" />} />
+      <Route path="/portfolio/p/:portfolioId" element={<PortfolioDetail type="p" />} />
   </Routes>
   );
 };

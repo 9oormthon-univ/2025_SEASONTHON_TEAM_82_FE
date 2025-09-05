@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Jalnan2TTF";
+  src: url("../assets/fonts/Jalnan2TTF.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  src: url("../assets/fonts/Pretendard-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Jalnan2TTF", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* =================================================== */
+
+:root { --safe-b: env(safe-area-inset-bottom, 0px); }
+
+.PhoneCanvas {
+    overflow: hidden;
+}
+.BusinessPlanScene {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+.PhoneFrame.BusinessPlanScene {
+    overflow: hidden;
+}
+
+.bp-content {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 16px calc(16px + var(--safe-b));
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+
+/* ========== 헤더 ========== */
+.bp-header{ 
+  display: grid; 
+  gap: 8px; 
+  margin: 24px 0;
+  
+}
+
+.bp-back{
+  width: 22px; 
+  height: 22px;
+  display: inline-grid; 
+  place-items: center;
+  border: 0; 
+  background: transparent; 
+  color: #111;
+  border-radius: 9999px; 
+  cursor: pointer;
+  padding: 0;
+}
+.bp-back:hover{ background: #f3f4f6; }
+
+.bp-title-row{
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  gap: 12px;
+
+  margin: 12px 0;
+}
+.bp-title{
+  margin: 0;
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #000000;
+}
+
+.bp-meta{
+  display: flex; 
+  justify-content: flex-end; 
+  gap: 6px;
+  font-family: "Pretendard-Regular";
+  font-size: 15px; 
+  color: #AAA5A5;
+}
+.bp-date-label{ color: #AAA5A5; }
+.bp-date{ color: #AAA5A5; }
+

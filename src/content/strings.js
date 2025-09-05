@@ -42,5 +42,11 @@ export const STRINGS = {
     section3: "비지니스 모델",
     section4: "실행 계획",
     section5: "다운로드"
+  },
+  PortfolioDetail: {
+    section1: "기간",
+    section2: "소개",
+    section3: "파일 업로드",
+    section4: "공개대상"
   }
 };
