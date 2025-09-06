@@ -11,11 +11,11 @@ const monthlystartup = ({ image, title, subtitle, dDay }) => {
       <div className="card-content">
         <img src={image} alt={title} className="card-image" />
         <div className="text-content">
-             <div className="title-wrapper">
+          <div className="title-wrapper">
             <span className="dday" style={{ backgroundColor: dDayColor }}>
               D-{dDay}
             </span>
-          <h2 className="card-title">{title}</h2>
+            <h2 className="card-title">{title}</h2>
           </div>
           <p className="card-subtitle">{subtitle}</p>
         </div>
