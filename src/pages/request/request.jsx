@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-import "./request.css";
+import "../Network.css";
 import Nav from "../../components/ui/nav/Nav";
 import search from "../../images/search.png";
 
@@ -67,63 +67,63 @@ const Request = () => {
 
   return (
     <div className="PhoneCanvas">
-      <div className="PhoneFrame requestScene">
-        <div className="request-content">
-          <div className="request-page">
-
-            {/* 헤더 */}
-            <div className="network-container">
-              <header className="network-header">
-                <h2>창업 네트워크</h2>
-                <div className="search-icon">
-                  <Link to="/settings2">
-                    <img src={search} alt="검색" />
-                  </Link>
-                </div>
-              </header>
+      <div className="PhoneFrame NetworkScene">
+        <div className="network-content">
+          
+          {/* 헤더 */}
+          <header className="network-header">
+            <p>창업 네트워크</p>
+            <div className="search-icon">
+              <Link to="/settings2">
+                <img src={search} alt="검색" />
+              </Link>
             </div>
+          </header>
 
-            {/* 탭 메뉴 */}
-      <nav className="network-tabs">
-        <span
-          className={activeTab === "자유게시판" ? "tab active" : "tab"}
-          onClick={() => handleTabClick("자유게시판", "/network/free")}
-        >
-          자유게시판
-        </span>
-        <span
-          className={activeTab === "창업모집" ? "tab active" : "tab"}
-          onClick={() => handleTabClick("창업모집", "/network/recruit")}
-        >
-          창업모집
-        </span>
-        <span
-          className={activeTab === "요청함" ? "tab active" : "tab"}
-          onClick={() => handleTabClick("요청함", "/network/request")}
-        >
-          요청함
-        </span>
-      </nav>
-            {/* 보낸 요청 */}
-            <h3 className="request-section-title">보낸 요청</h3>
-            {sentRequests.length === 0 ? (
-              <p className="no-requests">보낸 요청이 없습니다</p>
-            ) : (
-              sentRequests.map(req => renderRequestItem(req, "sent"))
-            )}
 
-            {/* 받은 요청 */}
-            <h3 className="request-section-title">받은 요청</h3>
-            {receivedRequests.length === 0 ? (
-              <p className="no-requests">받은 요청이 없습니다</p>
-            ) : (
-              receivedRequests.map(req => renderRequestItem(req, "received"))
-            )}
+          {/* 탭 메뉴 */}
+          <nav className="network-tabs">
+            <span
+              className={activeTab === "자유게시판" ? "tab active" : "tab"}
+              onClick={() => handleTabClick("자유게시판", "/network/free")}
+            >
+              자유게시판
+            </span>
+            
+            <span
+              className={activeTab === "창업모집" ? "tab active" : "tab"}
+              onClick={() => handleTabClick("창업모집", "/network/recruit")}
+            >
+              창업모집
+            </span>
+
+            <span
+              className={activeTab === "요청함" ? "tab active" : "tab"}
+              onClick={() => handleTabClick("요청함", "/network/request")}
+            >
+              요청함
+            </span>
+          </nav>
+
+
+          {/* 보낸 요청 */}
+          <p className="request-section-title">보낸 요청</p>
+          {sentRequests.length === 0 ? (
+            <p className="no-requests">보낸 요청이 없습니다</p>
+          ) : (
+            sentRequests.map(req => renderRequestItem(req, "sent"))
+          )}
+
+
+          {/* 받은 요청 */}
+          <p className="request-section-title">받은 요청</p>
+          {receivedRequests.length === 0 ? (
+            <p className="no-requests">받은 요청이 없습니다</p>
+          ) : (
+            receivedRequests.map(req => renderRequestItem(req, "received"))
+          )}
 
           </div>
-        </div>
-
-        {/* 하단 네비게이션 */}
         <Nav />
       </div>
     </div>

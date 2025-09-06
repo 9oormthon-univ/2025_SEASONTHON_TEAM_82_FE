@@ -18,7 +18,7 @@ const items = [
     {key: "home", aria: "홈", to: "/home", off: navHome, on: navHomeActive},
     {key: "info", aria: "정보", to: "/info", off: navInfo, on: navInfoActive},
     {key: "portfolio", aria: "포트폴리오", to: "/portfolio", off: navPortfolio, on: navPortfolioActive},
-    {key: "network", aria: "네트워크", to: "/network", off: navNetwork, on: navNetworkActive},
+    {key: "network", aria: "네트워크", to: "/network/free", off: navNetwork, on: navNetworkActive},
     {key: "my", aria: "마이", to: "/my/:userId", off: navMy, on: navMyActive},
 ];
 

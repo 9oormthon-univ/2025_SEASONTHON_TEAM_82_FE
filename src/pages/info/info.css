@@ -54,7 +54,6 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3열 */
   gap: 16px; /* 버튼 간격 */
-  padding: 0 20px; /* 왼쪽, 오른쪽 여백 */
   margin: 20px 0;
 }
 
@@ -84,10 +83,14 @@ body {
 }
 
 /* 창업 정보 아래 회색선 제거 */
-.network-header,
-.network-header h2 {
-  border-bottom: none !important;
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-family: "Pretendard-SemiBold";
 }
+
 
 /* ========== 이달의 추천 창업 정보 ========== */
 .monthly-info {
@@ -110,3 +113,13 @@ body {
 
 
 
+.subtitle-info {
+  font-family: "Pretendard-SemiBold";
+  font-size: 15px;
+}
+
+
+.category > button > div > p,
+.category > button > div > img {
+  margin: 0;
+}

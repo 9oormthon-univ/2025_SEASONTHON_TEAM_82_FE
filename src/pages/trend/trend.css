@@ -50,30 +50,8 @@ body {
     height: 100%;
 }
 
-/* 헤더 */
-.network-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  border-bottom: 1px solid #eee;
-}
 
-.network-tabs {
-  display: flex;
-  justify-content: flex-start;
-  padding: 10px 16px;
-  border-bottom: 1px solid #ddd;
-  gap: 16px;
-}
 
-.tab {
-  font-size: 16px;
-  color: gray;
-  cursor: pointer;
-}
 
 .tab.active {
   color: #4650FF; /* 파란색 */
