@@ -1,0 +1,71 @@
+.section-box {
+  margin: 16px 0 20px;
+}
+
+/* 제목 */
+.section-box__title {
+  font-family: "Pretendard-Regular";
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  font-size: 15px;            /* 필요 시 조정 */
+  line-height: 1.25;
+  color: #111;
+}
+
+/* 내용 박스 */
+.section-box__panel {
+  background: #fff;
+  border: 0.8px solid #AAA5A5;  /* 연한 회색 테두리 */
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-sizing: border-box;
+}
+
+/* 본문 텍스트 */
+.section-box__content {
+  font-family: "Pretendard-Regular";
+  margin: 0;
+  color: #020202;
+  font-size: 15px;            /* 이미지 느낌 살린 크게 보이는 본문 */
+  line-height: 1.6;
+  white-space: pre-line;      /* 문자열 줄바꿈(\n) 유지 */
+}
+
+/* 선택: 좁은 화면에서 타이포 약간 줄이기 */
+@media (max-width: 400px) {
+  .section-box__title   { font-size: 15px; }
+  .section-box__content { font-size: 15px; }
+}
+
+
+.section-box.is-download .section-box__file {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1.35;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+
+/* 비어있는 경우 */
+.section-box__empty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #AAA5A5;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.section-box__empty-icon {
+  width: 18px;
+  height: 16px;
+  display: block;
+  opacity: 0.9;
+}
+
+.section-box__empty-text {
+  font-family: "Pretendard-Regular";
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { STRINGS } from "../../content/strings";
 import { COLORS } from "../../content/colors";
+import { http } from "../../api/http";
 
 import "../../styles/phone.css";
 import "../../components/ui/Page";
@@ -14,6 +15,15 @@ import OnboardingButton from "../../components/button/onboarding/OnboardingButto
 
 
 export default function Onboarding() {
+
+    useEffect(() => {
+        const qs = new URLSearchParams(window.location.search);
+        const at = qs.get('at');
+        const rt = qs.get('rt');
+        if (at) localStorage.setItem('accessToken', at);
+        if (rt) localStorage.setItem('refreshToken', rt);
+        if (at || rt) window.history.replaceState({}, '', '/onboarding');
+    }, []);
 
     const navigate = useNavigate();
     const [idx, setIdx] = useState(0);

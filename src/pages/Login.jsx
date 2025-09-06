@@ -26,12 +26,19 @@ const Login = () => {
   }, []);
 
   const handleKakaoLogin = () => { 
-    // 실제 카카오 로그인 API 연동 가능 
+    const API_ORIGIN = 'http://54.191.47.252';
+    const clientId = import.meta.env.VITE_KAKAO_CLIENT_ID;
+    const redirect = `${API_ORIGIN}/api/v1/auth/kakao/login`;
 
-    
-    navigate("/onboarding");
-    //  navigate("/Home"); 
+    const url =
+      `https://kauth.kakao.com/oauth/authorize?client_id=${clientId}` +
+      `&redirect_uri=${encodeURIComponent(redirect)}` +
+      `&response_type=code&state=${encodeURIComponent('next=/onboarding')}`;
+
+    console.log('AUTH URL ->', url); // 반드시 확인!
+    window.location.href = url;
   };
+
 
   return ( 
     <div className="PhoneCanvas">
