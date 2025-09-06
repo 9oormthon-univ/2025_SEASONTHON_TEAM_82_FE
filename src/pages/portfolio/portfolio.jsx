@@ -1,3 +1,4 @@
+// src/pages/portfolio/portfolio.jsx
 import React, { useEffect, useState } from "react";
 import { STRINGS } from "../../content/strings";
 import { Link } from "react-router-dom";
@@ -16,19 +17,56 @@ import p_cover from "../../images/portfolio/portfolio_cover.svg";
 import b_cover from "../../images/portfolio/businessplan_cover.svg";
 
 const FIELD_LABELS = {
-  GREEN: "친환경",
+  ECO: "친환경",
   FOOD: "요식업",
-  IT: "IT",
+  STARTUP_IT: "스타트업/IT",
   SERVICE: "서비스",
-  CULTURE: "문화",
-  BEAUTY: "뷰티",
+};
+
+// YYYY.MM.DD 로 표시
+const fmt = (v) => {
+  if (!v) return "";
+  const d = new Date(v);
+  if (Number.isNaN(d.getTime())) return (v + "").slice(0, 10).replaceAll("-", ".");
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}.${m}.${day}`;
 };
 
 const Portfolio = () => {
+  // 포트폴리오
+  const [myPortfolios, setMyPortfolios] = useState([]);
+  const [pLoading, setPLoading] = useState(true);
+
+  // 사업계획서
   const [myBusinessPlan, setMyBusinessPlan] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [bpLoading, setBpLoading] = useState(true);
 
   useEffect(() => {
+    // 1) 포트폴리오 불러오기
+    (async () => {
+      try {
+        const res = await http.get("/v1/portfolios/my", { withCredentials: true });
+        const raw = res?.data?.data?.portfolios ?? [];
+        const mapped = (Array.isArray(raw) ? raw : []).map((it) => ({
+          id: it.id ?? it.portfolioId,
+          title: it.title ?? "(제목 없음)",
+          period:
+            it.startDate || it.endDate
+              ? `${fmt(it.startDate)}${it.endDate ? ` ~ ${fmt(it.endDate)}` : ""}`
+              : "",
+        }));
+        setMyPortfolios(mapped);
+      } catch (e) {
+        console.error("포트폴리오 불러오기 실패:", e);
+        setMyPortfolios([]);
+      } finally {
+        setPLoading(false);
+      }
+    })();
+
+    // 2) 사업계획서 불러오기
     (async () => {
       try {
         const res = await http.get("/v1/business-plans/my", {
@@ -42,8 +80,6 @@ const Portfolio = () => {
           : Array.isArray(data.items)
           ? data.items
           : [];
-
-        console.log("[BP] raw list from API:", list);
 
         const mapped = list.map((it) => ({
           id: it.businessPlanId ?? it.id,
@@ -61,21 +97,15 @@ const Portfolio = () => {
           updatedAt: it.updatedAt,
         }));
 
-        console.log("[BP] mapped list:", mapped);
         setMyBusinessPlan(mapped);
       } catch (e) {
         console.error("사업계획서 불러오기 실패:", e);
         setMyBusinessPlan([]);
       } finally {
-        setLoading(false);
+        setBpLoading(false);
       }
     })();
   }, []);
-
-  const myPortfolios = [
-    { id: 1, title: "청년 로컬 카페 브랜딩 프로젝트", period: "2025.05.27 ~ 2025.06.29" },
-    { id: 2, title: "카페 상품 디자인 UI/UX 제작", period: "2025.07.30 ~ 2025.08.14" },
-  ];
 
   return (
     <div className="PhoneCanvas">
@@ -115,12 +145,12 @@ const Portfolio = () => {
           <section className="section">
             <div className="section-head">
               <h3 className="section-title">{STRINGS.Portfolio.myPortfolio.title}</h3>
-              <button className="link-more" type="button">
-                더보기
-              </button>
+              <button className="link-more" type="button">더보기</button>
             </div>
 
-            {myPortfolios.length === 0 ? (
+            {pLoading ? (
+              <p className="empty-card">불러오는 중…</p>
+            ) : myPortfolios.length === 0 ? (
               <p className="empty-card">
                 "{STRINGS.Portfolio.myPortfolio.defaultDescription}"
               </p>
@@ -129,7 +159,7 @@ const Portfolio = () => {
                 {myPortfolios.map((p) => (
                   <li key={p.id}>
                     <Link
-                      to={`/portfolio/p/${p.id}`}
+                      to={`/portfolio/p/${encodeURIComponent(p.id)}`}
                       className="item-card"
                       aria-label={`${p.title} 상세보기`}
                     >
@@ -151,12 +181,10 @@ const Portfolio = () => {
           <section className="section">
             <div className="section-head">
               <h3 className="section-title">{STRINGS.Portfolio.myBusinessPlan.title}</h3>
-              <button className="link-more" type="button">
-                더보기
-              </button>
+              <button className="link-more" type="button">더보기</button>
             </div>
 
-            {loading ? (
+            {bpLoading ? (
               <p className="empty-card">불러오는 중…</p>
             ) : myBusinessPlan.length === 0 ? (
               <p className="empty-card">
