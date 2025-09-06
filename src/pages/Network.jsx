@@ -1,6 +1,6 @@
 //네트워크 채널
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState,useEffect } from "react";
+import { useNavigate,useLocation} from "react-router-dom";
 import "./Network.css";
 import { FiEdit } from "react-icons/fi"; 
 //  글쓰기 아이콘
@@ -14,15 +14,23 @@ import homeg from "../images/homeg.png";
 import portfolio from "../images/portfolio.png";
 import info from "../images/info.png";
 import networkh from "../images/networkh.png";
+import chat from "../images/chat.png";
 
 const Network = () => {
 const navigate = useNavigate();
+const location = useLocation();
  const [activeTab, setActiveTab] = useState("자유게시판");
+ const [posts, setPosts] = useState([]);
        
  const handleTabClick = (tabName, path) => {
   setActiveTab(tabName);
-   navigate(path); // 각 탭에 맞는 라우팅 경로 이동
+   navigate(path); 
   };
+
+ useEffect(() => {
+    const savedPosts = JSON.parse(localStorage.getItem("freePosts")) || [];
+    setPosts(savedPosts);
+  }, [activeTab,location]); // 자유게시판 탭 올 때마다 갱신
 
   return (
     <div className="network">
@@ -57,6 +65,33 @@ const navigate = useNavigate();
           요청함
         </span>
       </nav>
+
+      {/* 자유게시판 글 목록 */}
+      {activeTab === "자유게시판" && (
+        <div className="post-list">
+          {posts.length === 0 ? (
+            <p className="no-posts">아직 작성된 글이 없습니다.</p>
+          ) : (
+            posts.map((post) => (
+              <div key={post.id} className="post-item">
+                <div className="post-deco">
+            <img
+              src={chat} // 글마다 항상 보여줄 꾸며진 이미지
+              alt="장식 이미지"
+            />
+          </div>
+          <div className ="post-text">
+                <h3 className="post-title">{post.title}</h3>
+           
+                <p className="post-content">{post.content}</p>
+              </div>
+            </div>
+          
+            ))
+          )}
+        </div>
+      )}
+
 
           {/* 글쓰기 버튼 */}
       <button className="write-button" onClick={() => navigate("/writingfree")}>

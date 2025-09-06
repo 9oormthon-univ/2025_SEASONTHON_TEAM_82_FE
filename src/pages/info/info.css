@@ -71,14 +71,15 @@ body {
   transition: all 0.2s ease;
 }
 
+
 .category button:hover {
   background: #f0f0f0;
   transform: translateY(-3px);
 }
 
 .category button img {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 8px;
 }
 

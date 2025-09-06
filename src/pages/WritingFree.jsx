@@ -1,5 +1,5 @@
 //글쓰기 페이지
-import React, { useState } from "react";
+import React, { useState, } from "react";
 import { useNavigate } from "react-router-dom";
 import "./WritingFree.css";
 
@@ -19,15 +19,29 @@ const navigate = useNavigate();
       setImage(URL.createObjectURL(file));
     }
   };
-
+  
   const handleSubmit = () => {
     if (!title || !content) {
       alert("제목과 내용을 입력해주세요.");
       return;
     }
     alert("게시물이 등록되었습니다!");
-    navigate("/networktab"); // ✅ 자유게시판으로 이동
+    navigate("/networktab"); // ✅ 창업모집으로 이동
+
+  // ✅ 기존 저장된 글 불러오기
+    const existingPosts = JSON.parse(localStorage.getItem("freePosts")) || [];
+    // ✅ 새 글 객체 생성
+    const newPost = {
+      id: Date.now(),
+      title,
+      content,
+      image,
+    };
+
+    // ✅ localStorage에 저장 (새 글을 맨 위에 추가)
+    localStorage.setItem("freePosts", JSON.stringify([newPost, ...existingPosts]));
   };
+  
 
   return (
     <div className="write">

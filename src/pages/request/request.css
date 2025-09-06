@@ -1,0 +1,172 @@
+@font-face {
+  font-family: "Jalnan2TTF";
+  src: url("../assets/fonts/Jalnan2TTF.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  src: url("../assets/fonts/Pretendard-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Jalnan2TTF", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* =================================================== */
+
+:root { --safe-b: env(safe-area-inset-bottom, 0px); }
+
+.PhoneCanvas {
+    overflow: hidden;
+}
+.requestScene {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+.PhoneFrame.MyScene {
+    overflow: hidden;
+}
+/* 헤더 */
+.network-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+.network-tabs {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 16px;
+  border-bottom: 1px solid #ddd;
+  gap: 16px;
+}
+
+.tab {
+  font-size: 16px;
+  color: gray;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #4650FF; /* 파란색 */
+  font-weight: bold;
+  border-bottom: 2px solid #4650FF;
+  padding-bottom: 4px;
+}
+
+.request-section-title {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+
+.request-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  gap: 12px;
+  background-color: #fff;
+  position: relative;
+}
+
+.request-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.request-info {
+  flex: 1;
+}
+
+.request-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+.request-detail {
+  font-size: 13px;
+  color: #999;
+  margin: 2px 0 0 0;
+}
+
+.request-status {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.request-status.승인 { color: green; }
+.request-status.거절 { color: red; }
+
+.request-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.request-actions .approve {
+  background-color: #4650FF;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.request-actions .reject {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.go-profile {
+  margin-left: 8px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #4650FF;
+}
+
+.no-requests {
+  color: #999;
+  text-align: center;
+  margin: 8px 0;
+}

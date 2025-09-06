@@ -42,6 +42,60 @@
   padding-bottom: 4px;
 }
 
+.post-item {
+  display: flex;    
+  padding: 12px;
+  gap: 12px;   
+  border-bottom: 1px solid #ddd;
+  align-items: flex-start;
+}
+
+.post-item h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.post-text {
+  display: flex;
+  flex-direction: column; /* 제목 위, 내용 아래 */
+   flex: 1;                /* 남은 공간 채우기 */
+  min-width: 0;        
+}
+.post-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 -20px 0;
+  word-break: break-word; 
+}
+
+.post-content {
+  font-size: 12px;
+  color: #AAA5A5;
+  display: -webkit-box;
+  line-clamp: 3; /* 3줄까지만 보이게 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-weight: 600;      /* 얇게 */
+  -webkit-line-clamp: 3; /* 3줄 이상은 ... 처리 */
+  font-family: "Pretendard-Regular";
+}
+
+.no-posts {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
+
+.post-deco img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  
+}
+
+
 .write-button {
 position: absolute;
   bottom: 90px;
@@ -71,3 +125,4 @@ position: absolute;
   padding: 12px 0;      /* 위아래 여백 */
   border-top: 1px solid #ddd;
 }
+

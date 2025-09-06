@@ -68,10 +68,31 @@ const WritingRecruit = () => {
       모집분야: field,
       지역: region,
     });
-    navigate("/networktab"); // ✅ 자유게시판으로 이동
-  };
+    
+  
 
-  return (
+  // ✅ 기존 저장된 글 불러오기
+     const recruitPosts = JSON.parse(localStorage.getItem("recruitPosts")) || [];
+    // ✅ 새 글 객체 생성
+      const newPost = {
+      id: Date.now(),
+      title,
+      content,
+      image,
+      field,
+      region,
+
+      };
+
+    // ✅ localStorage에 저장 (새 글을 맨 위에 추가)
+    localStorage.setItem("recruitPosts", JSON.stringify([newPost, ...recruitPosts]));
+
+    navigate("/network/recruit"); // ✅ 창업모집으로 이동
+    };
+
+
+
+   return (
     <div className="write">
       <div className="write-container">
         {/* 헤더 */}

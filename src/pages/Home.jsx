@@ -109,15 +109,10 @@ const Home = () => {
                 title="교육 스타트업 창업 프로그램"
                 subtitle="교육의 미래를 이끌어갈 당신을 위해"              
               />
-              <FoundationInfo to="/info" image={eco} 
-                title="교육 스타트업 창업 프로그램"
-                subtitle="교육의 미래를 이끌어갈 당신을 위해"              
-              />
-              <FoundationInfo to="/info" image={eco} 
-                title="교육 스타트업 창업 프로그램"
-                subtitle="교육의 미래를 이끌어갈 당신을 위해"              
-              />
             </div>
+          </div>
+          <div className="banner-trend">
+            <Link to="/Trend"><img src={banner} className="banner" alt="" /></Link>
           </div>
         </div>
 
