@@ -11,7 +11,8 @@ import Portfolio from "./pages/portfolio/portfolio";
 import My from "./pages/my/my";
 import {Routes,Route} from "react-router-dom";
 import Onboarding from './pages/onboarding/Onboarding';
-
+import Trend from './pages/trend/trend';
+import Request from "./pages/request/request";
 function App() {
   return (
   <Routes>
@@ -26,6 +27,8 @@ function App() {
     <Route path="/portfolio" element={<Portfolio />} />
     <Route path="/network" element={<Network />} />
     <Route path="/my" element={<My />} />
+    <Route path="/trend" element={<Trend/>} />
+    <Route path="/network/request" element={<Request/>} />
   </Routes>
   );
 };

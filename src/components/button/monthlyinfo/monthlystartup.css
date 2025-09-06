@@ -1,0 +1,73 @@
+.foundation-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff; /* 흰색 배경 */
+  border: 1px solid #cccccc; /* 연한 회색 테두리 */
+  border-radius: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+  margin: 12px 16px; /* 화면 양옆 여백 */
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  padding: 8px 10px; 
+  width: calc(100% - 24px); /* margin 양쪽 포함해서 최대 너비 맞춤 */
+ 
+}
+
+.title-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 4px; 
+}
+
+/* D-Day */
+.dday {
+  position: absolute;
+  top: -20px;         /* 타이틀 위 */
+  left: 0;
+  padding: 2px 6px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 400;    /* 얇게 */
+  font-size: 0.7rem;   /* 작게 */
+}
+.card-content {
+  display: flex;
+  align-items: center;  /* 이미지와 텍스트 수직 중앙 정렬 */
+  flex-direction: row;  /* 이미지 왼쪽, 텍스트 오른쪽 */
+  gap: 16px;            /* 이미지와 텍스트 간격 */
+  min-height: 60px;     /* 카드 최소 높이 */
+}
+
+.card-image {
+ 
+  width: 64px; 
+  height: 48px;
+  margin-right: 12px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* D-Day 위치 기준 */
+  padding-top: 12px;     /* 텍스트를 위에서부터 8px 아래로 내림 */
+  
+}
+
+
+
+
+.card-title {
+  font-size: 1.0rem;
+  font-weight: 700;
+  margin: 0;
+  padding-left: 0;
+}
+
+.card-subtitle {
+  font-size: 0.95rem;
+  color: #666666; /* 연한 회색 */
+  margin-top: 3px;
+}
