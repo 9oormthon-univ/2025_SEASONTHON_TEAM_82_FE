@@ -49,3 +49,158 @@ body {
 .my-content {
     height: 100%;
 }
+
+
+/* ========== content ========== */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  src: url("../assets/fonts/Pretendard-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+:root { --safe-b: env(safe-area-inset-bottom, 0px); }
+
+.MyScene{
+  display:grid;
+  grid-template-rows: 1fr auto;
+  background:#fff;
+}
+.my-content{
+  padding: 20px 16px calc(16px + var(--safe-b));
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* 헤더 */
+.my-head {
+  display: block;
+  margin: 24px 0 12px 0;
+}
+
+.my-title {
+  font-family: "Pretendard-SemiBold";
+  font-size: 20px;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+.edit-btn {
+  display: block;
+  margin-left: auto;
+  font-size: 10px;
+  padding: 6px 12px;
+  background: #EBEBEB;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  color: #AAA5A5;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #eee;
+}
+
+/* 프로필 */
+.profile{
+  display:grid;
+  grid-template-columns: 92px 1fr;
+  gap:24px;
+  align-items:center;
+  padding-bottom: 8px;
+}
+.avatar{
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  background:#e5e7eb;
+  position:relative;
+  display:grid;
+  place-items:center;
+}
+.avatar-plus{
+  position:absolute;
+  right:1px; 
+  bottom:1px;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#4650FF;
+  color:#fff; 
+  font-weight:700; 
+  font-size:14px;
+  display:grid; 
+  place-items:center;
+  line-height:1;
+}
+.profile-meta .name{
+  font-family: "Pretendard-Regular";
+  font-size:16px;
+  margin: 0 0 6px 0;
+  color: #000000;
+}
+.profile-meta .nickname {
+  font-size:16px; 
+  color:#000000;
+  font-family: "Pretendard-Regular";
+  margin: 0 0 6px 0;
+}
+.profile-meta .region{
+  font-size:14px; 
+  color:#AAA5A5;
+  font-family: "Pretendard-Regular";
+  margin: 0 0 6px 0;
+}
+
+/* 구분선 */
+.divider{
+  border:0; 
+  height:3px; 
+  background:#eee; 
+  margin: 24px 0;
+}
+
+/* 자기소개 */
+.section-title{
+  margin:16px 0 8px;
+  font-size:15px; 
+  font-family: "Pretendard-SemiBold";
+}
+/* 이미 있는 파일에 아래만 추가 */
+
+.intro-box{
+  width: 100%;
+  min-height: 100px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #AAA5A5;
+  border-radius: 12px;
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: #111;
+  white-space: pre-line; /* 줄바꿈 유지 */
+}
+
+.intro-box.is-empty{
+  color: #AAA5A5;
+  font-family: "Pretendard-Regular";
+  font-size: 15px;
+}
+
+/* 하단 액션 */
+.my-actions{ margin-top:18px; }
+.row-link{
+  width:100%; border:0; background:#f3f4f6;
+  padding:16px; border-radius:14px;
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:15px;
+}
+.row-link .chev{ color:#111; }

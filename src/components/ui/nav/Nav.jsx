@@ -19,7 +19,7 @@ const items = [
     {key: "info", aria: "정보", to: "/info", off: navInfo, on: navInfoActive},
     {key: "portfolio", aria: "포트폴리오", to: "/portfolio", off: navPortfolio, on: navPortfolioActive},
     {key: "network", aria: "네트워크", to: "/network", off: navNetwork, on: navNetworkActive},
-    {key: "my", aria: "마이", to: "/my", off: navMy, on: navMyActive},
+    {key: "my", aria: "마이", to: "/my/:userId", off: navMy, on: navMyActive},
 ];
 
 export default function Nav() {

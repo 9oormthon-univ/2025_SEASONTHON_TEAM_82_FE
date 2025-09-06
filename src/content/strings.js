@@ -48,5 +48,13 @@ export const STRINGS = {
     section2: "소개",
     section3: "파일 업로드",
     section4: "공개대상"
+  },
+  My: {
+    title: "마이페이지",
+    updateButton: "내 정보 수정",
+    nicknameLabel: "닉네임",
+    introductionLabel: "자기소개",
+    introductionGuide: "간단한 자기소개로 나를 표현해보세요.",
+    myActiveButton: "내 활동 보러가기"
   }
 };
