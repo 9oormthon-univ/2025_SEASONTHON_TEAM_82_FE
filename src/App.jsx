@@ -28,7 +28,7 @@ function App() {
     <Route path="/onboarding" element={<Onboarding />} />
     <Route path="/info" element={<Info />} />
     <Route path="/portfolio" element={<Portfolio />} />
-    <Route path="/network" element={<Network />} />
+    <Route path="/network/free" element={<Network />} />
     <Route path="/my" element={<My />} />
     <Route path="/trend" element={<Trend/>} />
     <Route path="/network/request" element={<Request/>} />
