@@ -237,6 +237,7 @@ body {
   cursor: pointer;
 }
 
+
 /* hover/active/focus 상태 */
 .monthly-info .monthly-more:hover { color: #6b7280; }
 .monthly-info .monthly-more:active { transform: translateY(1px); }
@@ -249,3 +250,17 @@ body {
   grid-column: 1 / -1;
   margin-top: 8px;
 }
+
+.HomeScene .banner-trend {
+  margin-top: -100px; /* 배너를 위로 올림 (원하는 만큼 조정 가능) */
+  padding: 0 5px;   /* 좌우 여백만 주고 위아래는 제거 */
+}
+
+
+.HomeScene .banner-trend .banner{
+   display: block;
+  width: 100%;
+  height: auto;          
+  border-radius: 20px;   
+  object-fit: contain;  /* 잘리지 않고 전체가 보이도록 */
+ }                     

@@ -35,6 +35,7 @@ import network from "../images/network.png";
 import banner1 from "../images/banner1.png";
 import banner2 from "../images/banner2.png";
 import banner3 from "../images/banner3.png";
+
 import FoundationInfo from "../components/button/home/FoundationInfo";
 import Nav from "../components/ui/nav/Nav";
 
@@ -108,15 +109,10 @@ const Home = () => {
                 title="교육 스타트업 창업 프로그램"
                 subtitle="교육의 미래를 이끌어갈 당신을 위해"              
               />
-              <FoundationInfo to="/info" image={eco} 
-                title="교육 스타트업 창업 프로그램"
-                subtitle="교육의 미래를 이끌어갈 당신을 위해"              
-              />
-              <FoundationInfo to="/info" image={eco} 
-                title="교육 스타트업 창업 프로그램"
-                subtitle="교육의 미래를 이끌어갈 당신을 위해"              
-              />
             </div>
+          </div>
+          <div className="banner-trend">
+            <Link to="/Trend"><img src={banner} className="banner" alt="" /></Link>
           </div>
         </div>
 

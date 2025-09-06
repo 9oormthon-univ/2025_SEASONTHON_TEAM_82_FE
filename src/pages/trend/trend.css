@@ -1,0 +1,230 @@
+@font-face {
+  font-family: "Jalnan2TTF";
+  src: url("../assets/fonts/Jalnan2TTF.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  src: url("../assets/fonts/Pretendard-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Jalnan2TTF", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* =================================================== */
+
+:root { --safe-b: env(safe-area-inset-bottom, 0px); }
+
+.PhoneCanvas {
+    overflow: hidden;
+}
+.TrendScene {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+.PhoneFrame.trendScene {
+    overflow: hidden;
+}
+
+.trend-content {
+    height: 100%;
+}
+
+/* 헤더 */
+.network-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+.network-tabs {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 16px;
+  border-bottom: 1px solid #ddd;
+  gap: 16px;
+}
+
+.tab {
+  font-size: 16px;
+  color: gray;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #4650FF; /* 파란색 */
+  font-weight: bold;
+  border-bottom: 2px solid #4650FF;
+  padding-bottom: 4px;
+}
+
+ /* trend.css */
+
+/* 전체 영역 */
+.trend-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: "Pretendard-Regular", sans-serif;
+   overflow-y: auto;   /* ✅ 내부 스크롤 */
+  height: auto;       /* ✅ 내용 크기에 맞게 */
+  max-height: 100%;   /* ✅ 프레임을 넘지 않게 */
+   
+  /* 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* 제목 */
+.trend-text {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* 상단 통계 (기사건수 + 창업기업수) */
+.totaltrend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.totalArticles,
+.startupRate {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.totalArticles-text,
+.startupRate-text {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.totalArticles-count {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.startupRate-count {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4f46e5; /* 보라색 포인트 */
+}
+
+/* 키워드 TOP3 */
+.keyword-text {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.keyword-count {
+  list-style: none;
+  padding-left: 0;
+}
+
+.keyword-count li {
+  font-size: 14px;
+  margin-bottom: 10px; /* ✅ 리스트 간격 */
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* 기사 하이라이트 영역 */
+.article-section {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #fff;
+  margin-top: -20px;
+  padding-bottom: 80px; 
+}
+
+.article-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+/* 기사 리스트 */
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.article-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.article-item:last-child {
+  border-bottom: none;
+}
+
+/* 썸네일 자리 */
+.article-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #f3f3f3;
+  flex-shrink: 0;
+}
+
+/* 텍스트 */
+.article-content {
+  flex: 1;
+}
+
+.article-head {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.article-summary {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.article-date {
+  font-size: 12px;
+  color: #999;
+}
+

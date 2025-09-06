@@ -1,0 +1,158 @@
+
+.recruit {
+  position: relative;
+  width: 390px;   /* 아이폰 가로 크기 */
+  height: 844px;  /* 아이폰 세로 크기 */
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  background-color: #fff;
+  margin: 0 auto; 
+  flex-direction: column; 
+  display:flex;
+}
+
+/* 헤더 */
+.network-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
+
+.network-tabs {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 16px;
+  border-bottom: 1px solid #ddd;
+  gap: 16px;
+}
+
+.tab {
+  font-size: 16px;
+  color: gray;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #4650FF; /* 파란색 */
+  font-weight: bold;
+  border-bottom: 2px solid #4650FF;
+  padding-bottom: 4px;
+}
+
+/* 하단 탭바 */
+.bottom-tab {
+  position: absolute;   /*  내부 기준으로 배치 */
+  bottom: 0;            /*  가장 밑에 고정 */
+  left: 0;
+  width: 100%;          /* .home의 가로 크기(390px)에 맞게 */
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 12px 0;      /* 위아래 여백 */
+  border-top: 1px solid #ddd;
+}
+
+/* 지역 설정 버튼 */
+.region-button {
+  display: flex;
+  margin: 16px 0 10px;
+  justify-content: flex-end;
+  padding-right: 16px; 
+
+   
+}
+
+.region-button select {
+  width: 80px; /* 선택 박스 너비 확보 (원하는 크기로 조정 가능) */
+  padding: 10px 36px 10px 14px;
+  font-size: 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  appearance: none; /* 기본 화살표 제거 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.region-button select:hover {
+  border-color: #666;
+}
+
+
+/* 글 카드 스타일 */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* 카드 사이 여백 줄임 */
+  padding: 0 12px 80px; /* 양옆 패딩 줄임 */
+  max-height: calc(100% - 200px); /* 헤더, 탭, 버튼 영역 제외 */
+}
+
+.post-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+   padding: 10px 12px; /* 카드 내부 여백 조정 */
+  padding: 12px 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  gap: 12px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.post-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-region {
+  font-size: 13px;
+  color: #666;
+  background-color: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  flex-shrink: 0; /* 글 길이와 상관없이 왼쪽 고정 */
+}
+
+.post-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0; /* 내용 길이 자동 줄바꿈 */
+  margin-left: 8px;
+}
+
+.post-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  word-break: break-word;
+  color: #333;
+}
+
+.post-field {
+  font-size: 13px;
+  color: #999;
+  margin: 0;
+}
+
+.post-bookmark {
+  width: 24px; /* 작게 조정 */
+  height: 32px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
